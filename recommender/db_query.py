@@ -5,5 +5,5 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-CONNECTION = None # paste connection string here or read from .env file
+CONNECTION = os.getenv("CONNECTION")
 

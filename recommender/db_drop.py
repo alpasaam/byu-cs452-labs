@@ -6,9 +6,9 @@ import psycopg2
 
 load_dotenv()
 
-CONNECTION = None # paste connection string here or read from .env file
+CONNECTION = os.getenv("CONNECTION")
 
-DROP_TABLE = "DROP TABLE podcast, podcast_segment"
+DROP_TABLE = "DROP TABLE IF EXISTS podcast_segment, podcast"
 
 with psycopg2.connect(CONNECTION) as conn:
     cursor = conn.cursor()
