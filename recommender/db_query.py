@@ -11,7 +11,7 @@ def run_query(cursor, query, title):
     cursor.execute(query)
     rows = cursor.fetchall()
     cols = [d[0] for d in cursor.description]
-    print(f"\n--- {title} ---")
+    print(f"\n{title}")
     print("Query:", query.strip())
     print("Columns:", ", ".join(cols))
     for row in rows:
